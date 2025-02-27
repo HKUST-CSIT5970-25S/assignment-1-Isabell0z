@@ -16,7 +16,7 @@
 1. (1 mark) Report the name of measurement tool used in your measurements (you are free to choose *any* open source measurement software as long as it can measure CPU and memory performance). Please describe your configuration of the measurement tool, and explain why you set such a value for each parameter. Explain what the values obtained from measurement results represent (e.g., the value of your measurement result can be the execution time for a scientific computing task, a score given by the measurement tools or something else).
 
     > Phoronix Test Suite
-    >
+    > CPU performance test configuration: Compression Rating
     > Memory performance test configuration:  
         > Type: Test All Options (Average of Copy, Scale, Add, Triad )  
         > Benchmark: Test All Options (Both Integer and Floating Point)
@@ -27,13 +27,11 @@
 
     | Size        | CPU performance | Memory performance |
     | ----------- | --------------- | ------------------ |
-    | `t2.micro` |       3103 MIPS          |     Integer: 10613.35 MB/s, Floating Point: 10578.31 MB/s              |
-    | `t2.medium`  |     3914 MIPS          |     Integer: 12394.32 MB/s, Floating Point: 12137.38 MB/s              |
-    | `c5d.large` |      4276 MIPS          |     Integer: 13239.71 MB/s, Floating Point: 13038.39 MB/s              |
+    | `t2.micro` |       3784 MIPS          |     Integer: 10778.05 MB/s, Floating Point: 10751.90 MB/s              |
+    | `t2.medium`  |     9793 MIPS          |     Integer: 18789.47 MB/s, Floating Point: 18842.52 MB/s              |
+    | `c5d.large` |      7527 MIPS          |     Integer: 14041.86 MB/s, Floating Point: 13985.24 MB/s              |
 
     > Region: US East (N. Virginia). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI.
-
-    > The performance of CPU and memory increases commensurate with the increase of the number of vCPUs and memory resource
 
 ## Question 2: Measure the EC2 Network performance
 
@@ -46,11 +44,9 @@
     | `c5n.large` - `c5n.large` |       4960 Mbps         |     0.162 ms     |
     | `t3.medium` - `c5n.large` |       2390 Mbps         |     0.695 ms     |
     | `m5.large` - `c5n.large`  |       2980 Mbps         |     0.620 ms     |
-    | `m5.large` - `t3.medium`  |       4500 Mbps         |     0.143 ms     |
+    | `m5.large` - `t3.medium`  |       1980 Mbps         |     0.769 ms     |
 
     > Region: US East (N. Virginia). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. Note: Use private IP address when using iPerf within the same region. You'll need iPerf for measuring TCP bandwidth and Ping for measuring Round-Trip time.
-
-    > The network performance of instances of the same type is better than that of instances of different types.
 
 2. (1 mark) What about the network performance for instances deployed in different regions? In order to answer this question, you need to complete the following table.
 
@@ -61,5 +57,3 @@
     | Oregon - Oregon           |      4960 Mbps          |    0.158 ms      |
  
     > Region: US East (N. Virginia), US West (Oregon). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. All instances are `c5.large`. Note: Use public IP address when using iPerf within the same region.
-
-    > The network performance of instances deployed in the same region is much better than that of instances deployed in different regions.
